@@ -7,8 +7,8 @@
     <ProjectGuid>{AAC722AC-C652-4AB8-93A9-17112EB62D37}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LightInject.WepApiSkeleton.SelfHost</RootNamespace>
-    <AssemblyName>LightInject.WepApiSkeleton.SelfHost</AssemblyName>
+    <RootNamespace>LightInject.WebApiSkeleton.SelfHost</RootNamespace>
+    <AssemblyName>LightInject.WebApiSkeleton.SelfHost</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
