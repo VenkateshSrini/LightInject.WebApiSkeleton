@@ -14,12 +14,12 @@ namespace WebApiSkeleton.SelfHost
                          {
                              service.ConstructUsing(() => new WebApplication());
                              service.WhenStarted(s => s.Start());
-                             service.WhenStopped(s => s.Stop());
+                             service.WhenStopped(s => s.Stop());                             
                          });
                      host.RunAsLocalSystem();
                      host.SetServiceName("WebApiSkeleton");
                      host.SetDisplayName("WebApiSkeleton");
-                     host.SetDescription("WebApiSkeleton Web Server");
+                     host.SetDescription("WebApiSkeleton Web Server");                     
                  });
         }
     }

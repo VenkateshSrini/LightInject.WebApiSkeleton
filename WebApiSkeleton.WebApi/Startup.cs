@@ -1,6 +1,10 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using System.Web.Http;
 using LightInject;
 using Owin;
+using Swashbuckle.Application;
 using WebApiSkeleton.Server;
 
 namespace WebApiSkeleton.WebApi
@@ -16,6 +20,7 @@ namespace WebApiSkeleton.WebApi
             config.UseJson();
 
             Configure(config.EnableLightInject());
+            ConfigureSwagger(config);
 
             app.UseWebApi(config);
         }
@@ -27,6 +32,26 @@ namespace WebApiSkeleton.WebApi
         public virtual void Configure(IServiceContainer serviceContainer)
         {
             serviceContainer.RegisterFrom<CompositionRoot>();
-        }              
+        }
+
+        private static void ConfigureSwagger(HttpConfiguration config)
+        {
+            config.EnableSwagger(
+                c =>
+                {
+                    c.SingleApiVersion("v1", "WebApiSkeleton")
+                        .Description("WebApi Skeleton");
+                    c.IncludeXmlComments(GetXmlCommentsPathForControllers());
+                })
+                .EnableSwaggerUi();
+        }
+
+        private static string GetXmlCommentsPathForControllers()
+        {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var commentsFileName = Assembly.GetExecutingAssembly().GetName().Name + ".XML";
+            var commentsFile = Path.Combine(baseDirectory, commentsFileName);
+            return commentsFile;
+        }
     }
 }

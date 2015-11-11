@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Customers\CustomersQuery.sql" />
+    <Content Include="Customers\InsertCustomer.sql" />
     <Content Include="Database\CreateDatabase.sql" />
     <Content Include="Database\CustomersByCountry.sql" />
     <Content Include="Database\DatabaseInitializedQuery.sql" />

@@ -115,5 +115,17 @@ namespace WebApiSkeleton.Server {
                 return ResourceManager.GetString("DatabaseInitializedQuery", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Customers (CustomerId, CompanyName)
+        ///VALUES (@CustomerId, @CompanyName)
+        ///
+        ///.
+        /// </summary>
+        internal static string InsertCustomer {
+            get {
+                return ResourceManager.GetString("InsertCustomer", resourceCulture);
+            }
+        }
     }
 }
